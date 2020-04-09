@@ -1,0 +1,11 @@
+<div class = "cart-item">
+    
+<span>{{cartItem.productName}}</span>x<span>{{cartItem.qty}}</span>: <strong>{{(cartItem.qty*cartItem.price) | currency : 'USD'}}</strong>
+`  
+<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+    <button mdbBtn type="button" color = "grey" size="sm" class="waves-light" mdbWavesEffect><strong>-</strong></button>
+    {{cartItem.qty}}
+    <button mdbBtn type="button" color = "grey" size="sm" class="waves-light" mdbWavesEffect><strong>+</strong></button>
+        
+
+</div>

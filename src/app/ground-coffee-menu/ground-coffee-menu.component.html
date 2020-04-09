@@ -1,0 +1,53 @@
+ <div class="row">
+  <div class="col-md-7">
+    <br>
+    <h3>GROUND COFFEE</h3>
+    <p style="font-size: 20px; margin-left: 10px; color:white; text-align: center;">Good from the ground up!</p><br>
+    <p style="font-size: 20px; margin-left: 10px; color:white; text-align: left;">Our ground coffee is 100% certified
+      Organic, Fairtrade, shade-grown Arabica, Canadian Rocky Mountain-roasted coffee.
+      <br> (Think that's a mouthful? Wait until you've tried the first sip!)
+      <br><br> Freshly ground, meticulously packaged and one step closer to the cup!</p>
+  </div>
+  <div class="col-md-5">
+    <!-- <div class="view overlay"> -->
+      <img src="../../assets/images/ground-coffee-menu image.jpg" class="img-fluid"
+        alt="Sample image with waves effect.">
+      <a>
+        <div class=" mdbWavesEffect"></div>
+      </a>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="row">
+  <br><br><br><br>
+</div>
+
+<div class="row">
+
+  <div class="col-md-3" *ngFor="let product of productList">
+      <app-ground-coffee-item  *ngIf="product.category===categories.ground" [productItem]="product"></app-ground-coffee-item>
+    </div>
+  </div>
+
+
+<div class="row">
+  <br><br><br><br>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <img src="../../assets/images/paper bag.png"
+      style="width: 60px; border-radius:60%;margin-right:30% ; height: 50px; position: absolute; right: 0;">
+
+     
+
+    <button type="button" routerLink = "/checkout">Proceed to checkout
+    </button>
+
+  </div>
+</div>
+<div class="row">
+  <br><br><br><br>
+
+</div>

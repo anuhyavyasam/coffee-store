@@ -1,0 +1,26 @@
+.about{
+    background-image: url("https://i1.wp.com/www.streetsmartkitchen.com/wp-content/uploads/coffee.jpg?resize=790%2C576&ssl=1");
+    width: 100%; 
+    height: 500px
+}
+.content{
+    font-family: Georgia, 'Times New Roman', Times, serif;;
+    text-align: left;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 50px;
+    
+}
+h2{
+    text-align: center;
+    padding-top: 50px;
+    font-family: fantasy;
+    
+}
+
+h3{
+    text-align: left;
+    margin-bottom: 300px;
+    font-weight: bold
+}

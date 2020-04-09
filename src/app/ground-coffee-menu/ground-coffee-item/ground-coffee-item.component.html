@@ -1,0 +1,47 @@
+<div class="row">
+  <br><br>
+
+</div>
+<div class="body">
+  <img class="card-img-top" [src]="productItem.imageUrl" alt="cap-image">
+
+  <div class="card-body">
+
+    <p class="card-text">{{productItem.name}}<br>{{productItem.description}}</p>
+    <p class="card-text">
+      <strong>{{productItem.price | currency : '$'}}</strong>
+    </p>
+    <hr>
+
+    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+
+      <!-- <a class="btn-floating btn-lg purple-gradient"><i class="fas fa-bolt"></i></a> -->
+      
+
+      <!-- Basic dropdown -->
+      <!-- <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">Qty</button>
+
+      <div class="dropdown-menu">
+        <button class="dropdown-item">1</button>
+        <button class="dropdown-item">2</button>
+        <button class="dropdown-item">3</button>
+      </div> -->
+      <!-- Basic dropdown -->
+
+      <button type="button" class="btn" (click)="handleAddtoCart()">Add to Cart<i class="fas fa-coffee ml-2"
+          aria-hidden="true"></i></button>
+
+      <!-- <button mdbBtn type="button" color="blue" size="sm" class="waves-light" mdbWavesEffect><strong>  left  </strong></button>
+      {{1}}
+      <button mdbBtn type="button" color="grey" size="sm" class="waves-light" mdbWavesEffect><strong>+</strong></button> -->
+    </div>
+
+    <!-- <button type="button" class="btn" (click)="handleAddtoCart()">Add to Cart</button> -->
+
+
+
+
+
+  </div>
+</div>

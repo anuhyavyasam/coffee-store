@@ -1,0 +1,37 @@
+.img-fluid{
+    width : 500px;
+    height : 400px;
+    padding-top: 50px;
+    
+    border-radius: 10%;
+}
+h3, h4{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+    padding-bottom : 20px;
+    
+    color:white;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.row{
+    background-color: rgba(0, 0, 0, 0.918)
+}
+
+button{
+    margin-left: 75%;
+    height: 50px;
+    width: 250px;
+    color: black;
+    background-color: white;
+   /* border: 10px; */
+   border-radius: 5px;
+   
+    
+}
+button:hover{
+    background-color: rgb(39, 36, 36);
+    color: white;
+    
+}
