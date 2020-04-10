@@ -23,6 +23,8 @@ import { PaymentComponent } from './order-summary/payment/payment.component';
 import { WholeBeanMenuComponent } from './whole-bean-menu/whole-bean-menu.component';
 import { WholeBeanItemComponent } from './whole-bean-menu/whole-bean-item/whole-bean-item.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 const appRoutes : Routes = [
@@ -34,8 +36,8 @@ const appRoutes : Routes = [
    children: [{path: 'wholebeanitem', component:WholeBeanItemComponent}]},
    {path: 'story', component : StoryComponent},
    {path: 'checkout', component: CheckoutComponent},
-   {path: 'billing' , component: BillingAddressComponent},
    {path: 'revieworder', component: CartComponent},
+   {path: 'billing' , component: BillingAddressComponent},
    {path: 'ordersuccess', component: OrdersuccessComponent},
 ]
 
@@ -64,6 +66,7 @@ const appRoutes : Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule, MDBBootstrapModule.forRoot(),
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],

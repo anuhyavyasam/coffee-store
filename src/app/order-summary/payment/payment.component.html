@@ -1,67 +1,115 @@
- 
-
 <p class="h4 mb-4">Payment</p>
-<form class="border border-light p-5">
-    <div class="row">
-      
-        <div class="col-md-4 mb-3">
-<div class="custom-control custom-radio">
-      <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-      <label class="custom-control-label" for="credit">Credit card</label>
-</div>
-        </div>
-      <div class="col-md-4 mb-3">
-        <div class="custom-control custom-radio">
-     <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-      <label class="custom-control-label" for="debit">Debit card</label>
+<form class="border border-light p-5"
+(ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="row">
+
+    <!-- <div class="col-md-4 mb-3">
+      <div class="custom-control custom-radio">
+        <input id="credit" 
+        type="radio" 
+        class="custom-control-input" checked required
+        ngModel
+        name="paymentMethod" required
+        >
+        <label class="custom-control-label" for="credit">Credit card</label>
+      </div>
     </div>
-      </div> 
-      <div class="col-md-4 mb-3">
-        <div class="custom-control custom-radio">
-          <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-      <label class="custom-control-label" for="paypal">Paypal</label>
-</div>
-</div>
+    <div class="col-md-4 mb-3">
+      <div class="custom-control custom-radio">
+        <input id="debit" 
+        type="radio" 
+        class="custom-control-input" required
+        ngModel
+        name="paymentMethod">
+        <label class="custom-control-label" for="debit">Debit card</label>
+      </div>
     </div>
-    <div class = "mb-3"></div>
-  
+    <div class="col-md-4 mb-3">
+      <div class="custom-control custom-radio">
+        <input id="paypal" 
+        type="radio" 
+        class="custom-control-input" required
+        ngModel
+        name="paymentMethod">
+        <label class="custom-control-label" for="paypal">Paypal</label>
+      </div>
+    </div> -->
+    <div class="form-radio" *ngFor= "let paymentType of paymentTypes">
+      <label>
+      <input type="radio" required name="paymentType" 
+      [ngModel]="defaultPaymentType"
+      required
+      [value]="paymentType">
+      {{paymentType}}  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+      </label>
+    </div>
+  </div>
+  <div class="mb-3"></div>
+
   <div class="row">
     <div class="col-md-8 mb-3">
       <label for="cc-name">Name on card</label>
-      <input type="text" class="form-control" id="cc-name" placeholder="" required>
+      <input 
+      type="text" 
+      class="form-control" 
+      id="cc-name" 
+      placeholder=""
+      ngModel
+      name="ccName"
+      required>
       <small class="text-muted">Full name as displayed on card</small>
       <div class="invalid-feedback">
         Name on card is required
       </div>
     </div>
   </div>
-  <div class = "row">
+  <div class="row">
     <div class="col-md-8 mb-3">
       <label for="cc-number">Credit card number</label>
-      <input type="text" class="form-control" id="cc-number" placeholder="" required>
-      <div class="invalid-feedback">
-        Credit card number is required
-      </div>
+      <input 
+      type="text" 
+      class="form-control" 
+      id="cc-number" 
+      placeholder="" required
+      ngModel
+      name="ccNumber"
+      #ccNumber="ngModel">
     </div>
+    <span 
+    class="help-block" 
+    *ngIf="!ccNumber.valid && ccNumber.touched">
+       Please enter valid credit card number!</span>
   </div>
 
   <div class="row">
     <div class="col-md-4 mb-3">
       <label for="cc-expiration">Expiration</label>
-      <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+      <input 
+      type="text" 
+      class="form-control" 
+      id="cc-expiration" 
+      placeholder="" required
+      ngModel
+      name="ccExp">
       <div class="invalid-feedback">
         Expiration date required
       </div>
     </div>
     <div class="col-md-4 mb-3">
       <label for="cc-expiration">CVV</label>
-      <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+      <input type="text" 
+      class="form-control" 
+      id="cc-cvv" 
+      placeholder="" required
+      ngModel
+      name="cvv">
       <div class="invalid-feedback">
         Security code required
       </div>
     </div>
   </div>
   <hr class="mb-4">
-  <button class="btn" type="submit" routerLink = "/ordersuccess">Place Order</button>
+  <button class="btn" type="submit" 
+  routerLink="/ordersuccess" 
+  [disabled]="!f.valid">Place Order</button>
 </form>
-

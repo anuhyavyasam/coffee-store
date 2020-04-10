@@ -1,82 +1,100 @@
-<div class = "container"><br><br>
-    
-    <div class = "row">
-      
-      
-    <div class = "col-md-6">
-      <!-- <app-cart></app-cart>  -->
-        <p class="h4 mb-4">Billing Address</p>
+<div class="container"><br><br>
 
-        <form class="border border-light p-5">
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault01">First name</label>
-              <input type="text" class="form-control" formControlName="firstName"
-           id="validationDefault01" placeholder="First name" 
-               required>  
+  <div class="row">
+
+
+    <div class="col-md-6">
+
+      <p class="h4 mb-4">Billing Address</p>
+
+      <form class="border border-light p-5" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault01">First name</label>
+            <input type="text" id="validationDefault01" placeholder="First name" ngModel name="firstName" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault02">Last name</label>
+            <input type="text" id="validationDefault02" placeholder="Last name" ngModel name="lastName" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 mb-3">
+            <label for="validationDefaultUsername">Email</label>
+            <div class="input-group">
+              <input type="text" id="validationDefaultUsername" placeholder="Email" 
+              class="form-control"
+                aria-describedby="inputGroupPrepend21" 
+                ngModel name="email" 
+                required 
+                email 
+                #email="ngModel"
+                [ngModel]="defaultEmail">
             </div>
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault02">Last name</label>
-              <input type="text" class="form-control" id="validationDefault02" placeholder="Last name"
-                required>
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid email!</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 mb-3">
+            <label for="validationDefaultUsername">Phone</label>
+            <div class="input-group">
+              <input type="text" id="validationDefaultUsername" placeholder="Phone"
+                aria-describedby="inputGroupPrepend21" ngModel name="phone" required>
             </div>
           </div>
-            <div class="form-row">
-            <div class="col-md-8 mb-3">
-              <label for="validationDefaultUsername">Email</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Email"
-                  aria-describedby="inputGroupPrepend21" required>
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 mb-3">
+            <label for="validationDefaultUsername">Street Address</label>
+            <div class="input-group">
+              <input type="text" id="validationDefaultUsername" placeholder="Street Address"
+                aria-describedby="inputGroupPrepend21" ngModel name="stAddress" required
+                [ngModel]="defaultStreet">
             </div>
           </div>
-            <div class="form-row">
-            <div class="col-md-8 mb-3">
-              <label for="validationDefaultUsername">Phone</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Phone"
-                  aria-describedby="inputGroupPrepend21" required>
-              </div>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <label for="validationDefault03">City</label>
+            <input type="text" id="validationDefault03" placeholder="City" ngModel 
+            name="city" required
+            [ngModel]="defaultCity">
           </div>
-          <div class="form-row">
-            <div class="col-md-8 mb-3">
-              <label for="validationDefaultUsername">Street Address</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Street Address"
-                  aria-describedby="inputGroupPrepend21" required>
-              </div>
-            </div>
+          <div class="col-md-3 mb-4">
+            <label for="validationDefault04">State</label>
+            <input type="text" id="validationDefault04" placeholder="State" ngModel name="state" 
+            required
+            [ngModel]="defaultState"
+            >
           </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-4">
-              <label for="validationDefault03">City</label>
-              <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
-            </div>
-            <div class="col-md-3 mb-4">
-              <label for="validationDefault04">State</label>
-              <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
-            </div>
-            <div class="col-md-3 mb-4">
-              <label for="validationDefault05">Zip</label>
-              <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
-            </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <label for="validationDefault05">Zip</label>
+            <input type="text" id="validationDefault05" placeholder="Zip" ngModel name="zip" 
+            required
+            [ngModel]="defaultZip">
           </div>
-          
-        </form>
- 
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <button class="btn" 
+            type="submit"
+            [disabled]="!f.valid">Save</button>
+          </div>
+        </div>
+      </form>
+
     </div>
-  
-    <div class = "col-md-6">
-      
-      
+
+    <div class="col-md-6">
+
       <app-payment></app-payment>
     </div>
-  
- 
-</div>
+
 
   </div>
- 
-  
-  
+
+</div>

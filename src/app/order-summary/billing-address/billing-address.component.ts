@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -9,16 +10,27 @@ import { Router} from '@angular/router';
 })
 export class BillingAddressComponent implements OnInit {
 
+  @ViewChild('f') billingForm: NgForm;
+
+  defaultEmail= "abc@gmail.com"
+  defaultStreet="8000 Towson way"
+  defaultCity="Towson"
+  defaultState="MD"
+  defaultZip="20988"
 
   constructor(private router: Router) { }
 
-  ngOnInit(){
-   
-}
-proceedToPayment(){
-  
-  this.router.navigate(['/ordersuccess']);
-}
+  ngOnInit() {
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form)
+  }
+
+
+  proceedToPayment() {
+    this.router.navigate(['/ordersuccess']);
+  }
 
 }
 
