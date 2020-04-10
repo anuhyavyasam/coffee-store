@@ -19,6 +19,7 @@ export class CartComponent implements OnInit {
       this.cartTotal+= p.quantity * p.price;
       this.cartItems.push({
         productId : p.id,
+        productImage : p.imageUrl,
         productName : p.name,
         qty : p.quantity,
         price : p.price 

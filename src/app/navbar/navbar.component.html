@@ -16,7 +16,7 @@
             <div *dropdownMenu class="dropdown-menu" role="menu">
                 <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/groundcoffee">GROUND COFFEE</a>
     
-                <a class="dropdown-item waves-light" mdbWavesEffect href="#">WHOLE BEAN</a>
+                <a class="dropdown-item waves-light" mdbWavesEffect routerLink = "/wholebean">WHOLE BEAN</a>
             </div>
         </li>
         <li class="nav-item dropdown" dropdown>
@@ -30,10 +30,16 @@
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link waves-light" mdbWavesEffect>
         CONNECT</a>
         <div *dropdownMenu class="dropdown-menu" role="menu">
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#">CONNECT US ON <br> <mdb-icon fab icon="facebook"> </mdb-icon><mdb-icon fab icon="twitter"></mdb-icon><mdb-icon fab fab icon="instagram"></mdb-icon></a>
+          <a class="dropdown-item waves-light" mdbWavesEffect>CONNECT US ON</a>
+<a href = "https://www.facebook.com/" target = "blank" type="button"  size="sm" color="fb"><mdb-icon fab icon="facebook-f"></mdb-icon></a>
+<a href = "https://www.instagram.com/" target = "blank" type="button" mdbBtn floating="true" size="sm" color="ins"><mdb-icon fab icon="instagram"></mdb-icon></a>
+<a href = "https://www.twitter.com/" target = "blank" type="button" mdbBtn floating="true" size="sm" color="tw"><mdb-icon fab icon="twitter"></mdb-icon></a>
+
+            <!-- <a href="www.facebook.com" class = "facebook" target = "blank"><mdb-icon fab icon="facebook"> </mdb-icon></a>   -->
         </div>
     </li>
-  
+    <!-- <mdb-icon fab icon="twitter"></mdb-icon><mdb-icon fab fab icon="instagram"></mdb-icon></a> -->
+    <!-- <a class="dropdown-item waves-light" mdbWavesEffect href="#">CONNECT US ON <br> -->
     <li class = "navbar-brand">
       <a class = "nav-item" routerLink="/"><img src="assets/images/logo.JPG" id ="logo"></a>
   </li>
@@ -56,7 +62,7 @@
     </div>
   </li>
   <li class="nav-item dropdown" dropdown>
-    <a dropdownToggle mdbWavesEffect type="button" routerLink = "/checkout" class="nav-link waves-light" mdbWavesEffect>
+    <a dropdownToggle mdbWavesEffect type="button" routerLink = "/login" class="nav-link waves-light" mdbWavesEffect>
      LOGIN </a>
     <!-- <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
       <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/myorders">MY ORDERS</a>

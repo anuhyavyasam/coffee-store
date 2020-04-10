@@ -20,16 +20,22 @@ import { CartComponent } from './order-summary/cart/cart.component';
 import { CartItemComponent } from './order-summary/cart/cart-item/cart-item.component';
 import { MessengerService } from 'src/app/service/messenger.service';
 import { PaymentComponent } from './order-summary/payment/payment.component';
+import { WholeBeanMenuComponent } from './whole-bean-menu/whole-bean-menu.component';
+import { WholeBeanItemComponent } from './whole-bean-menu/whole-bean-item/whole-bean-item.component';
+import { LoginComponent } from './login/login.component';
 
 
 const appRoutes : Routes = [
   {path : '' , component: HomeComponent},
+  {path: 'login', component: LoginComponent},
    {path : 'groundcoffee' , component: GroundCoffeeMenuComponent,
    children: [{path: 'groundcoffeeitem', component:GroundCoffeeItemComponent}]},
+   {path : 'wholebean' , component: WholeBeanMenuComponent,
+   children: [{path: 'wholebeanitem', component:WholeBeanItemComponent}]},
    {path: 'story', component : StoryComponent},
    {path: 'checkout', component: CheckoutComponent},
-   {path: 'ordersummary' , component: BillingAddressComponent},
-   {path: 'payment', component: PaymentComponent},
+   {path: 'billing' , component: BillingAddressComponent},
+   {path: 'revieworder', component: CartComponent},
    {path: 'ordersuccess', component: OrdersuccessComponent},
 ]
 
@@ -49,6 +55,9 @@ const appRoutes : Routes = [
     CartComponent,
     CartItemComponent,
     PaymentComponent,
+    WholeBeanMenuComponent,
+    WholeBeanItemComponent,
+    LoginComponent,
     
   ],
 

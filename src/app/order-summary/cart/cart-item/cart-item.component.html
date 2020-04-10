@@ -1,11 +1,24 @@
-<div class = "cart-item">
-    
-<span>{{cartItem.productName}}</span>x<span>{{cartItem.qty}}</span>: <strong>{{(cartItem.qty*cartItem.price) | currency : 'USD'}}</strong>
-`  
-<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-    <button mdbBtn type="button" color = "grey" size="sm" class="waves-light" mdbWavesEffect><strong>-</strong></button>
-    {{cartItem.qty}}
-    <button mdbBtn type="button" color = "grey" size="sm" class="waves-light" mdbWavesEffect><strong>+</strong></button>
-        
 
+<div class = "cart-item">
+
+<div class = "row">
+    <div class = "col-md-2">
+<img [src] = "cartItem.productImage"> </div>
+<div class = "col-md-4">
+{{cartItem.productName}}</div>
+<div class = "col-md-3">
+<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+    <button mdbBtn type="button" color = "black" size="xs" class="waves-light" mdbWavesEffect><strong>-</strong></button>
+    <h5><strong>{{cartItem.qty}}</strong></h5>
+    <button mdbBtn type="button" color = "black" size="xs" class="waves-light" id="secondbtn" mdbWavesEffect><strong>+</strong></button>
+</div>     
+</div>
+<div class = "col-md-3">
+    <!-- {{cartItem.qty}} -->
+    <strong>{{(cartItem.qty*cartItem.price) | currency : 'USD'}}</strong>
+ </div>
+
+
+</div>
+<hr>
 </div>

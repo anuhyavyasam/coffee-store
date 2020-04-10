@@ -34,10 +34,7 @@ constructor( private productService : ProductService, private router : Router ) 
     //     console.log('Data fetched!', res);
     //   }
     // ),
-    this.categories = {
-      ground: 'ground',
-      whole: 'whole-bean'
-    };
+    
    this.productList = this.productService.getProducts();
 
   }
