@@ -1,4 +1,4 @@
-<div class="container"><br><br>
+<div class="container mb-4"><br><br>
 
   <div class="row">
 
@@ -10,12 +10,18 @@
       <form class="border border-light p-5" (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="validationDefault01">First name</label>
-            <input type="text" id="validationDefault01" placeholder="First name" ngModel name="firstName" required>
+            <label for="validationDefault01">First Name</label>
+            <input type="text" id="validationDefault01" class="form-control" placeholder="First Name" ngModel name="firstName" 
+            #firstName = "ngModel" required>
+            <span class="help-block" *ngIf="!firstName.valid && firstName.touched">Please enter first name</span>
           </div>
+         
+         
           <div class="col-md-6 mb-3">
-            <label for="validationDefault02">Last name</label>
-            <input type="text" id="validationDefault02" placeholder="Last name" ngModel name="lastName" required>
+            <label for="validationDefault02"> Last Name</label>
+            <input type="text" id="validationDefault02" class="form-control" placeholder="Last Name" ngModel name="lastName" 
+            #lastName = "ngModel" required>
+            <span class="help-block" *ngIf="!lastName.valid && lastName.touched">Please enter last name</span>
           </div>
         </div>
         <div class="row">
@@ -31,41 +37,103 @@
                 #email="ngModel"
                 [ngModel]="defaultEmail">
             </div>
-            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid email!</span>
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+            
           </div>
         </div>
         <div class="row">
-          <div class="col-md-8 mb-3">
+          <div class="col-md-9 mb-3">
             <label for="validationDefaultUsername">Phone</label>
             <div class="input-group">
-              <input type="text" id="validationDefaultUsername" placeholder="Phone"
-                aria-describedby="inputGroupPrepend21" ngModel name="phone" required>
+              <input type="text" id="validationDefaultUsername" placeholder="Phone" class="form-control"
+                aria-describedby="inputGroupPrepend21" ngModel name="phone" 
+                [pattern] = "phoneNumberPattern"
+                #phone = "ngModel" required>
+                
             </div>
+            <span class="help-block" *ngIf="!phone.valid && phone.touched">Please enter a valid phone number!</span>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-8 mb-3">
+          <div class="col-md-9 mb-3">
             <label for="validationDefaultUsername">Street Address</label>
             <div class="input-group">
-              <input type="text" id="validationDefaultUsername" placeholder="Street Address"
+              <input type="text" id="validationDefaultUsername" placeholder="Street Address" class="form-control"
                 aria-describedby="inputGroupPrepend21" ngModel name="stAddress" required
+                #stAddress = "ngModel"
                 [ngModel]="defaultStreet">
+                <span class="help-block" *ngIf="!stAddress.valid && stAddress.touched">Please enter street address</span>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-4">
             <label for="validationDefault03">City</label>
-            <input type="text" id="validationDefault03" placeholder="City" ngModel 
+            <input type="text" id="validationDefault03" placeholder="City" class="form-control" ngModel 
             name="city" required
-            [ngModel]="defaultCity">
+            [ngModel]="defaultCity"
+            #city = "ngModel">
+            <span class="help-block" *ngIf="!city.valid && city.touched">Please enter city</span>
           </div>
           <div class="col-md-3 mb-4">
-            <label for="validationDefault04">State</label>
-            <input type="text" id="validationDefault04" placeholder="State" ngModel name="state" 
-            required
-            [ngModel]="defaultState"
-            >
+            <label for="validationDefault04">State</label><br>
+            <select class="state" class="form-control">
+              <option value="AL">AL</option>
+              <option value="AK">AK</option>
+              <option value="AR">AR</option>	
+              <option value="AZ">AZ</option>
+              <option value="CA">CA</option>
+              <option value="CO">CO</option>
+              <option value="CT">CT</option>
+              <option value="DC">DC</option>
+              <option value="DE">DE</option>
+              <option value="FL">FL</option>
+              <option value="GA">GA</option>
+              <option value="HI">HI</option>
+              <option value="IA">IA</option>	
+              <option value="ID">ID</option>
+              <option value="IL">IL</option>
+              <option value="IN">IN</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="LA">LA</option>
+              <option value="MA">MA</option>
+              <option value="MD" selected>MD</option>
+              <option value="ME">ME</option>
+              <option value="MI">MI</option>
+              <option value="MN">MN</option>
+              <option value="MO">MO</option>	
+              <option value="MS">MS</option>
+              <option value="MT">MT</option>
+              <option value="NC">NC</option>	
+              <option value="NE">NE</option>
+              <option value="NH">NH</option>
+              <option value="NJ">NJ</option>
+              <option value="NM">NM</option>			
+              <option value="NV">NV</option>
+              <option value="NY">NY</option>
+              <option value="ND">ND</option>
+              <option value="OH">OH</option>
+              <option value="OK">OK</option>
+              <option value="OR">OR</option>
+              <option value="PA">PA</option>
+              <option value="RI">RI</option>
+              <option value="SC">SC</option>
+              <option value="SD">SD</option>
+              <option value="TN">TN</option>
+              <option value="TX">TX</option>
+              <option value="UT">UT</option>
+              <option value="VT">VT</option>
+              <option value="VA">VA</option>
+              <option value="WA">WA</option>
+              <option value="WI">WI</option>	
+              <option value="WV">WV</option>
+              <option value="WY">WY</option>
+              required
+          </select>		 
+           
+            <!-- [ngModel]="defaultState"
+            > -->
           </div>
 
         </div>
@@ -73,23 +141,25 @@
         <div class="row">
           <div class="col-md-6 mb-4">
             <label for="validationDefault05">Zip</label>
-            <input type="text" id="validationDefault05" placeholder="Zip" ngModel name="zip" 
+            <input type="text" id="validationDefault05" placeholder="Zip" class="form-control" ngModel name="zip" 
             required
-            [ngModel]="defaultZip">
+            [ngModel]="defaultZip"
+            #zip = "ngModel">
+            <span class="help-block" *ngIf="!zip.valid && zip.touched">Please enter zipcode</span>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-4">
             <button class="btn" 
             type="submit"
-            [disabled]="!f.valid">Save</button>
+            [disabled]="!f.valid">Save Address</button>
           </div>
         </div>
       </form>
 
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 mb-4">
 
       <app-payment></app-payment>
     </div>

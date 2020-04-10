@@ -47,8 +47,8 @@
   <div class="mb-3"></div>
 
   <div class="row">
-    <div class="col-md-8 mb-3">
-      <label for="cc-name">Name on card</label>
+    <div class="col-md-9 mb-3">
+      <label for="cc-name">Name</label> <small class="text-muted"> (Full name as displayed on card)</small>
       <input 
       type="text" 
       class="form-control" 
@@ -56,56 +56,63 @@
       placeholder=""
       ngModel
       name="ccName"
-      required>
-      <small class="text-muted">Full name as displayed on card</small>
-      <div class="invalid-feedback">
-        Name on card is required
-      </div>
+      placeholder = "Full name" 
+      required
+      #ccname = "ngModel"> 
+      <span class="help-block" *ngIf="!ccname.valid && ccname.touched">Full name is required</span>
+      
+      
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8 mb-3">
-      <label for="cc-number">Credit card number</label>
+    <div class="col-md-9 mb-3">
+      <label for="cc-number">Card Number</label>
       <input 
       type="text" 
       class="form-control" 
       id="cc-number" 
       placeholder="" required
       ngModel
-      name="ccNumber"
+      name="ccNumber" placeholder = "Card Number"
+      [pattern] = "cardPattern"
       #ccNumber="ngModel">
+      <span *ngIf="!ccNumber.valid && ccNumber.touched">
+        Please enter a valid card number!</span>
     </div>
-    <span 
-    class="help-block" 
-    *ngIf="!ccNumber.valid && ccNumber.touched">
-       Please enter valid credit card number!</span>
+   
   </div>
 
   <div class="row">
     <div class="col-md-4 mb-3">
-      <label for="cc-expiration">Expiration</label>
+      <label for="cc-expiration">Expiration Date</label>
       <input 
       type="text" 
       class="form-control" 
       id="cc-expiration" 
       placeholder="" required
+      [pattern] = "datePattern"
       ngModel
-      name="ccExp">
-      <div class="invalid-feedback">
-        Expiration date required
-      </div>
+      name="ccExp"
+      placeholder = "mm/yyyy"
+      #ccExp = "ngModel">
+      <span *ngIf="!ccExp.valid && ccExp.touched">
+        Enter valid expiry date</span>
+      
     </div>
-    <div class="col-md-4 mb-3">
+    <div class = "col-md-1 mb-3"></div>
+    <div class="col-md-3 mb-3">
       <label for="cc-expiration">CVV</label>
       <input type="text" 
       class="form-control" 
+      [pattern] = "cvvPattern"
       id="cc-cvv" 
-      placeholder="" required
+      placeholder="CVV" required
       ngModel
-      name="cvv">
-      <div class="invalid-feedback">
-        Security code required
-      </div>
+      name="cvv"
+      #cvv = "ngModel">
+      <span *ngIf="!cvv.valid && cvv.touched">
+        cvv is required</span>
+      
     </div>
   </div>
   <hr class="mb-4">

@@ -9,14 +9,15 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./billing-address.component.css']
 })
 export class BillingAddressComponent implements OnInit {
+  phoneNumberPattern = "^((\\+1-?)|0)?[0-9]{10}$"; 
 
   @ViewChild('f') billingForm: NgForm;
 
-  defaultEmail= "abc@gmail.com"
-  defaultStreet="8000 Towson way"
-  defaultCity="Towson"
+  defaultEmail= ""
+  defaultStreet=""
+  defaultCity=""
   defaultState="MD"
-  defaultZip="20988"
+  defaultZip=""
 
   constructor(private router: Router) { }
 
