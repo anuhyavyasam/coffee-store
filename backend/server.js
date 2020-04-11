@@ -6,7 +6,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const dbConfig = require('./database/db');
-const productRoute = require('./routes/product');
+
+const productRoute = require('./routes/product-rte');
+const orderRoute = require('./routes/order-rte');
 
 // Connecting with mongo db
 mongoose.Promise = global.Promise;
@@ -34,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 
 app.use('/api/v1', productRoute);
+app.use('/api/v1', orderRoute);
 
 // Create port
 const port = process.env.PORT || 4000;
