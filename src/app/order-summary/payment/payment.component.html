@@ -1,6 +1,5 @@
 <p class="h4 mb-4">Payment</p>
-<form class="border border-light p-5"
-(ngSubmit)="onSubmit(f)" #f="ngForm">
+<form class="border border-light p-5" #f="ngForm">
   <div class="row">
 
     <!-- <div class="col-md-4 mb-3">
@@ -116,7 +115,7 @@
     </div>
   </div>
   <hr class="mb-4">
-  <button class="btn" type="submit" 
-  routerLink="/ordersuccess" 
-  [disabled]="!f.valid">Place Order</button>
+  <!-- routerLink="/ordersuccess"  -->
+  <button class="btn" type="submit"
+  [disabled]="!f.valid" (click) = "submitOrder()">Place Order</button>
 </form>

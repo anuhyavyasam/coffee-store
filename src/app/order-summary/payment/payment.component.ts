@@ -1,6 +1,11 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router'
 import { NgForm } from '@angular/forms';
+import { ProductService } from 'src/app/service/product.service';
+import { ApiService } from 'src/app/service/api.service';
+import { Order } from 'src/app/models/order';
+import { Product } from 'src/app/models/product';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-payment',
@@ -15,14 +20,37 @@ export class PaymentComponent implements OnInit {
 
   paymentTypes = ['credit', 'debit', 'paypal'];
 
+  totalPrice = 0;
+  cartItems = [];
+
   @ViewChild('f') paymentForm: NgForm; 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private productService: ProductService,
+    private apiService: ApiService) { }
 
   ngOnInit(): void {
   }
-orderSuccess(){
-  this.router.navigate(['/ordersuccess']);
-};
-  onSubmit(form: NgForm){
-    console.log(form);
+
+  submitOrder(){
+    const checkedOutProducts = this.productService.getCheckedOutProducts();
+    console.log('** checked out peoducts**');
+    checkedOutProducts.forEach(p => {
+      this.totalPrice+= p.quantity * p.price;
+      this.cartItems.push({
+        productId : p._id,
+        productName : p.name,
+        category: p.category,
+        qty : p.quantity,
+        price : p.price 
+      });
+    });
+    const order: Order = {
+      any: this.cartItems,
+      totalPrice: this.totalPrice
+    };
+    console.log('****order is being placed', order);
+    this.apiService.saveOrder(order).subscribe((res) => {
+          console.log('Order data saved successfully!', res);
+          this.router.navigate(['/ordersuccess']);
+        }
+      );
   }}

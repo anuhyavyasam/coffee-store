@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
     checkedOutProducts.forEach(p => {
       this.cartTotal+= p.quantity * p.price;
       this.cartItems.push({
-        productId : p.id,
+        productId : p._id,
         productImage : p.imageUrl,
         productName : p.name,
         qty : p.quantity,
@@ -28,34 +28,6 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.msg.getMsg().subscribe((product: Product) =>{
-    //   this.addProductToCart(product)
-    // })
-    // }
-    // addProductToCart(product: Product){
-
-    //   let productExists = false;
-
-    //   for (let i in this.cartItems){
-    //     if( this.cartItems[i].productId === product.id){
-    //       this.cartItems[i].qty++
-    //       productExists = true
-    //       break;
-    //     }
-    //   }
-
-    //   if(!productExists){
-    //     this.cartItems.push({
-    //       productId : product.id,
-    //       productName : product.name,
-    //       qty : 1,
-    //       price : product.price 
-    //     })
-    //   }
-  
-    // }
   }
-
-
 }
   
