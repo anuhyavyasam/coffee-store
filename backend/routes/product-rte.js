@@ -8,9 +8,10 @@ const Product = require('../models/Product');
 // Get All products
 function getProducts(req, res) {
     Product.find((err, data) => {
-        if (error) {
-            return next(error)
+        if (err) {
+            return next(err)
           } else {
+            console.log('responing back to client', data);
             res.json(data)
           }
     });
@@ -43,8 +44,8 @@ function updateProduct(req, res) {
         $set: req.body
       }, (error, data) => {
         if (error) {
-          return next(error);
           console.log(error)
+          return next(error);
         } else {
           res.json(data)
           console.log('Data updated successfully')
@@ -57,8 +58,8 @@ function deleteProduct(req, res) {
         $set: req.body
       }, (error, data) => {
         if (error) {
-          return next(error);
           console.log(error)
+          return next(error);
         } else {
           res.json(data)
           console.log('Data removed successfully');
