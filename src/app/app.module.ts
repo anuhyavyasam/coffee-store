@@ -24,6 +24,8 @@ import { WholeBeanMenuComponent } from './whole-bean-menu/whole-bean-menu.compon
 import { WholeBeanItemComponent } from './whole-bean-menu/whole-bean-item/whole-bean-item.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { MapComponent } from './map/map.component';
+import {StorageServiceModule} from 'angular-webstorage-service';
 
 
 
@@ -39,6 +41,7 @@ const appRoutes : Routes = [
    {path: 'revieworder', component: CartComponent},
    {path: 'billing' , component: BillingAddressComponent},
    {path: 'ordersuccess', component: OrdersuccessComponent},
+   {path: 'storelocator', component: MapComponent}
 ]
 
 
@@ -60,6 +63,7 @@ const appRoutes : Routes = [
     WholeBeanMenuComponent,
     WholeBeanItemComponent,
     LoginComponent,
+    MapComponent,
     
   ],
 
@@ -68,7 +72,8 @@ const appRoutes : Routes = [
     AppRoutingModule, MDBBootstrapModule.forRoot(),
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    StorageServiceModule
   ],
   providers: [ApiService, ProductService, MessengerService],
   bootstrap: [AppComponent]
