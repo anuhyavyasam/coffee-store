@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-ordersuccess',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersuccessComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService) {
+    // clear cart products from session storage
+    productService.clearProducts()
+   }
 
   ngOnInit(): void {
   }
