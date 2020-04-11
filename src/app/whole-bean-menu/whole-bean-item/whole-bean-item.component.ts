@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/product';
 
-import {ProductService} from 'src/app/service/product.service';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-whole-bean-item',
@@ -9,17 +9,14 @@ import {ProductService} from 'src/app/service/product.service';
   styleUrls: ['./whole-bean-item.component.css']
 })
 export class WholeBeanItemComponent implements OnInit {
-  @Input() productItem : Product;
+  @Input() productItem: Product;
   @Output() productSelected = new EventEmitter();
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
-  handleAddtoCart(){
-    // this.productSelected.emit(this.productItem);
-    // this.msg.sendMsg(this.productItem);
+  handleAddtoCart() {
     this.productService.checkedOutProducts(this.productItem);
-
-    }
+  }
 
 }

@@ -22,7 +22,6 @@ export class ProductService {
     new Product(12, 'Excelsa', 'whole-bean', 'Coffea excelsa', 20, "https://images-na.ssl-images-amazon.com/images/I/51EGHd7Io-L._AC_SY400_.jpg")
   ];
 
-  // checkedProducts: Product[] = [];
   STORAGE_KEY = 'productCart';
 
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService) { }
@@ -38,7 +37,6 @@ export class ProductService {
     // set the data into session storage
     const existingCartItems: Product[] = this.storage.get(this.STORAGE_KEY) || [];
     // key exists in session storage
-    console.log('***existingCartItems1', existingCartItems);
     if (existingCartItems && existingCartItems.length > 0) {
       for (const product of existingCartItems) {
         // if existing item, just update the quantity
@@ -57,11 +55,9 @@ export class ProductService {
     } else {
       selected.quantity = 1;
       existingCartItems.push(selected);
-      console.log('***existingCartItems2', existingCartItems);
     }
     // set the cart data into session storage
     this.storage.set(this.STORAGE_KEY, existingCartItems);
-    console.log('*** storage', this.storage.get(this.STORAGE_KEY));
   }
 
 
@@ -72,8 +68,6 @@ export class ProductService {
   clearProducts() {
     if (this.storage.get(this.STORAGE_KEY) !== null) {
       this.storage.remove(this.STORAGE_KEY);
-      console.log('***', this.storage.get(this.STORAGE_KEY));
-      console.log('**cleared**');
     }
   }
 
