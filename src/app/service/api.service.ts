@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Order } from '../models/order';
 
 @Injectable({
     providedIn: 'root'
@@ -9,14 +10,21 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 
 export class ApiService {
 
-    baseUri: string = 'http://localhost:4000/api/v1';
+    apiServer = 'http://localhost';
+    serverPort = 4000;
+
+    baseUri: string = `${this.apiServer}:${this.serverPort}/api/v1`;
     headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     constructor(private http: HttpClient) { }
 
     // Get all products
-    getProducts() {
-        return this.http.get(`${this.baseUri}/product`);
+    getProducts(): Observable<any> {
+        return this.http.get(`${this.baseUri}/product`).pipe(
+            map((res: Response) => {
+                return res;
+            }),
+            catchError(this.errorMgmt));
     }
 
     // Get product by id
@@ -38,10 +46,19 @@ export class ApiService {
         )
     }
 
+    // Save Order
+
+    saveOrder(order: Order): Observable<any> {
+        const url = `${this.baseUri}/order`;
+        return this.http.post(url, order, {headers: this.headers}).pipe(
+            catchError(this.errorMgmt)
+        )
+    }
+
     // Error handling 
     errorMgmt(error: HttpErrorResponse) {
         let errorMessage = '';
-        if (error.error instanceof ErrorEvent) {
+        if (error instanceof ErrorEvent) {
             // Get client-side error
             errorMessage = error.error.message;
         } else {

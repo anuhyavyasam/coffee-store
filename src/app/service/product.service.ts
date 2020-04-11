@@ -26,11 +26,6 @@ export class ProductService {
 
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService) { }
 
-  getProducts(): Product[] {
-    //TODO : Populate products from an api and return an Observable
-    return this.products;
-  }
-
   checkedOutProducts(selected: Product) {
     let isNewSelection = true;
 
@@ -40,7 +35,7 @@ export class ProductService {
     if (existingCartItems && existingCartItems.length > 0) {
       for (const product of existingCartItems) {
         // if existing item, just update the quantity
-        if (product.id === selected.id) {
+        if (product._id === selected._id) {
           product.quantity++;
           isNewSelection = false;
           break;
