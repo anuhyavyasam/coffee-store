@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-// import { ApiService } from './../service/api.service';
+import { ApiService } from './../service/api.service';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/models/product'
 
@@ -18,10 +18,10 @@ export class GroundCoffeeMenuComponent implements OnInit {
 };
 
 
-// constructor( private apiService: ApiService, private productService : ProductService ) { 
-  
-// }
-constructor( private productService : ProductService, private router : Router ) { 
+
+constructor( private apiService: ApiService, 
+  private productService : ProductService, 
+  private router : Router ) { 
   this.categories = {
     ground: 'ground',
     whole: 'whole-bean'
@@ -29,14 +29,11 @@ constructor( private productService : ProductService, private router : Router ) 
 }
 
   ngOnInit(){
-    // this.apiService.getProducts().subscribe(
-    //   (res) => {
-    //     console.log('Data fetched!', res);
-    //   }
-    // ),
-    
-   this.productList = this.productService.getProducts();
-
+    this.apiService.getProducts().subscribe((data: Product[]) => {
+        console.log('Data fetched!', data);
+        this.productList = data;
+      }
+    );
   }
   onProceedToCheckout(){
     this.router.navigate(['/checkout']);
