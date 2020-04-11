@@ -11,6 +11,9 @@ const Product = new Schema({
    },
    price: {
       type: String
+   },
+   _id: {
+      type: Schema.Types.ObjectId
    }
 }, {
    collection: 'products'
