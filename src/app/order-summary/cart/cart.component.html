@@ -15,7 +15,9 @@
 
 <ul *ngIf = "cartItems.length > 0" class = "list-group">
     <li class = "list-group-item" *ngFor = "let item of cartItems">
-        <app-cart-item [cartItem] = "item"></app-cart-item>
+        <app-cart-item [cartItem] = "item" 
+        (onQuantityDecrement)="onQuantityDecremented(item)"
+        (onQuantityIncrement)="onQuantityIncremented(item)"></app-cart-item>
         </li>
     <li class = "list-group-item" id="totaldisplay">
         <strong id = "total">Total : {{cartTotal | currency : '$'}}</strong>

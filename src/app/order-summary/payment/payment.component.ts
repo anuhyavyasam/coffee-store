@@ -5,7 +5,7 @@ import { ProductService } from 'src/app/service/product.service';
 import { ApiService } from 'src/app/service/api.service';
 import { Order } from 'src/app/models/order';
 import { Product } from 'src/app/models/product';
-import { ConsoleReporter } from 'jasmine';
+
 
 @Component({
   selector: 'app-payment',

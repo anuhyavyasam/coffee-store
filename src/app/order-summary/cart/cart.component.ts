@@ -29,5 +29,23 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  onQuantityDecremented(selected) {
+    for(let cartItem of this.cartItems ) {
+      if(selected.productId === cartItem.productId) {
+        cartItem.qty--;
+        break;
+      }
+    }
+  }
+
+  onQuantityIncremented(selected) {
+    for(let cartItem of this.cartItems ) {
+      if(selected.productId === cartItem.productId) {
+        cartItem.qty++;
+        break;
+      }
+    }
+  }
 }
   

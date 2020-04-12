@@ -8,9 +8,16 @@
 {{cartItem.productName}}</div>
 <div class = "col-md-3">
 <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-    <button mdbBtn type="button" color = "black" size="xs" class="waves-light" mdbWavesEffect><strong>-</strong></button>
+    <button mdbBtn type="button" color = "black" size="xs" 
+    class="waves-light" 
+    mdbWavesEffect
+    (click)="onQuantityDecrement()">
+    <strong>-</strong></button>
     <h5><strong>{{cartItem.qty}}</strong></h5>
-    <button mdbBtn type="button" color = "black" size="xs" class="waves-light" id="secondbtn" mdbWavesEffect><strong>+</strong></button>
+    <button mdbBtn type="button" color = "black" size="xs" 
+    class="waves-light" id="secondbtn" 
+    mdbWavesEffect
+    (click)="onQuantityIncrement()"><strong>+</strong></button>
 </div>     
 </div>
 <div class = "col-md-3">
