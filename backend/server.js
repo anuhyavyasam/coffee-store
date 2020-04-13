@@ -40,9 +40,11 @@ app.use('/api/v1', orderRoute);
 
 // Create port
 const port = process.env.PORT || 4000;
-const server = app.listen(port, () => {
+console.log(process.env);
+
+app.listen(port, () => {
   console.log('Connected to port ' + port)
-})
+});
 
 // Find 404 and hand over to error handler
 app.use((req, res, next) => {

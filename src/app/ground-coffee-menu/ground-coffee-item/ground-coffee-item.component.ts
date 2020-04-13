@@ -16,12 +16,14 @@ export class GroundCoffeeItemComponent implements OnInit {
   @Output() productSelected = new EventEmitter();
 
 
-  constructor(private msg: MessengerService, private productService: ProductService) { }
+  constructor(private msg: MessengerService, private productService: ProductService,
+    private messageService: MessengerService) { }
 
   ngOnInit() {
   }
 
   handleAddtoCart() {
+    this.messageService.sendMessage(this.productItem);
     this.productService.checkedOutProducts(this.productItem);
   }
 

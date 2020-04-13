@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { ProductService } from 'src/app/service/product.service';
 
 
 @Component({
@@ -19,19 +20,25 @@ export class BillingAddressComponent implements OnInit {
   defaultState="MD"
   defaultZip=""
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private productService: ProductService) {
+      
+   }
 
   ngOnInit() {
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form)
+  onSubmit(f: NgForm) {
+    // console.log(f);
+  this.productService.setBillingAddress(f.value);
+
   }
 
 
   proceedToPayment() {
     this.router.navigate(['/ordersuccess']);
   }
+
+  
 
 }
 

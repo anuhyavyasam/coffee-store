@@ -30,9 +30,8 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitOrder(){
+  submitOrder(f: NgForm){
     const checkedOutProducts = this.productService.getCheckedOutProducts();
-    console.log('** checked out peoducts**');
     checkedOutProducts.forEach(p => {
       this.totalPrice+= p.quantity * p.price;
       this.cartItems.push({
@@ -40,16 +39,18 @@ export class PaymentComponent implements OnInit {
         productName : p.name,
         category: p.category,
         qty : p.quantity,
-        price : p.price 
+        price : p.price,
+       
       });
     });
     const order: Order = {
       any: this.cartItems,
+      billingAddress : this.productService.getBillingAddress(),
+      paymentInfo: f.value,
       totalPrice: this.totalPrice
     };
-    console.log('****order is being placed', order);
+
     this.apiService.saveOrder(order).subscribe((res) => {
-          console.log('Order data saved successfully!', res);
           this.router.navigate(['/ordersuccess']);
         }
       );

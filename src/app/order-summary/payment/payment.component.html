@@ -115,7 +115,6 @@
     </div>
   </div>
   <hr class="mb-4">
-  <!-- routerLink="/ordersuccess"  -->
   <button class="btn" type="submit"
-  [disabled]="!f.valid" (click) = "submitOrder()">Place Order</button>
+  [disabled]="!f.valid" (click) = "submitOrder(f)">Place Order</button>
 </form>

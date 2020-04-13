@@ -26,6 +26,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MapComponent } from './map/map.component';
 import {StorageServiceModule} from 'angular-webstorage-service';
+import { CartNotificationComponent } from './cart-notification/cart-notification.component';
 
 
 
@@ -48,6 +49,7 @@ const appRoutes : Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    CartNotificationComponent,
     HomeComponent,
     FooterComponent,
     GroundCoffeeMenuComponent,

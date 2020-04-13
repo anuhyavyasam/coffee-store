@@ -5,6 +5,8 @@ const Schema = mongoose.Schema;
 // Define collection and schema
 const Order = new Schema({
    any: [],
+   billingAddress: {},
+   paymentInfo : {},
    totalPrice: {
       type: String
    },
@@ -13,6 +15,6 @@ const Order = new Schema({
    }
 }, {
    collection: 'orders'
-})
+});
 
 module.exports = mongoose.model('Order', Order)
