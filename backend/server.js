@@ -13,10 +13,10 @@ const orderRoute = require('./routes/order-rte');
 // Connecting with mongo db
 mongoose.Promise = global.Promise;
 const db  = process.env.MONGODB_URL || dbConfig.db;
-mongoose.connect(dbConfig.db, {
+mongoose.connect(db, {
    useNewUrlParser: true
 }).then(() => {
-      console.log('Database sucessfully connected')
+      console.log('Database is sucessfully connected')
    },
    error => {
       console.log('Database could not connected: ' + error)
@@ -47,7 +47,8 @@ const port = process.env.PORT || 4000;
 console.log(process.env);
 
 app.listen(port, () => {
-  console.log('Connected to port ' + port)
+  console.log('Connected to port ' + port);
+  console.log('app locals', app.locals);
 });
 
 // Find 404 and hand over to error handler
