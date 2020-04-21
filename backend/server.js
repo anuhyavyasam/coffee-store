@@ -16,10 +16,10 @@ const db  = process.env.MONGODB_URL || dbConfig.db;
 mongoose.connect(db, {
    useNewUrlParser: true
 }).then(() => {
-      console.log('Database is sucessfully connected')
+      console.log(`Database is sucessfully connected at ${db}`);
    },
    error => {
-      console.log('Database could not connected: ' + error)
+      console.log('Database could not be connected: ' + error)
    }
 );
 
@@ -52,9 +52,9 @@ app.listen(port, () => {
 });
 
 // Find 404 and hand over to error handler
-app.use((req, res, next) => {
-    next(createError(404));
- });
+// app.use((req, res, next) => {
+//     next(createError(404));
+//  });
  
  // error handler
  app.use(function (err, req, res, next) {
