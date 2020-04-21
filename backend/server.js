@@ -12,7 +12,7 @@ const orderRoute = require('./routes/order-rte');
 
 // Connecting with mongo db
 mongoose.Promise = global.Promise;
-
+const db  = process.env.MONGODB_URL || dbConfig.db;
 mongoose.connect(dbConfig.db, {
    useNewUrlParser: true
 }).then(() => {
