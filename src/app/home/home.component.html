@@ -1,69 +1,131 @@
-<!--Carousel Part-->
+<!-- new code -->
 
-<div class = "row">
-  <div class = "col-md-12">
 <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
   <mdb-carousel-item>
     <div class="view w-100">
-      <img class="d-block w-100" src="../../assets/images/carousel_image1.jpg" alt="First slide">
-      <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
-    </div>
-    <div class="carousel-caption">
-      <h3 class="h3-responsive">Hand Picked from crop to cup</h3>
-    </div>
-  </mdb-carousel-item>
-  <mdb-carousel-item>
-    <div class="view w-100">
-      <img class="d-block w-100" src="../../assets/images/carousel_image2.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://free4kwallpapers.com/uploads/originals/2019/04/08/morning-coffee-wallpaper.jpg" alt="Second slide">
       <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
     </div>
     <div class="carousel-caption">
       <h3 class="h3-responsive">Coffee packed with goodness</h3>
+    
     </div>
   </mdb-carousel-item>
   <mdb-carousel-item>
     <div class="view w-100">
-      <img class="d-block w-100" src="../../assets/images/carousel_image3.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://image.freepik.com/free-photo/coffee-beans-ripening-fresh-coffee-red-berry-branch_37874-1072.jpg" alt="First slide">
       <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
     </div>
-    <div class="carousel-caption" style = "padding-top : 10px">
-      <h3 class="h3-responsive">100% Organic - Rain washed, Sun Dried ,  Fire Roasted</h3>
+    <div class="carousel-caption">
+      <h3 class="h3-responsive">Hand Picked from crop to cup</h3>
+
     </div>
   </mdb-carousel-item>
-</mdb-carousel>
-</div>
-</div>
-
-<!--Ground Coffee Part-->
-
   
-    <div class = "row">
-        <div class = "col-md-7">
-            <img class ="d-block w-100" src = "https://cdn.openpr.com/T/1/T123125832_g.jpg">
-
-        </div> 
-        <div class = "col-md-5">
-    <h3 id = "ground">FRESHLY GROUND FOR <br>THE DAILY GRIND</h3>
-        <br>   
-        <button type="button" class="groundbtn" routerLink = "/groundcoffee">GET GROUNDED ></button>      
+  <mdb-carousel-item>
+    <div class="view w-100">
+      <img class="d-block w-100" src="https://www.perfectdailygrind.com/wp-content/uploads/2017/11/morrowcoffee_9_11_2017_20_26_59_672-1.jpg" alt="Third slide">
+      <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
     </div>
-</div>
+    <div class="carousel-caption">
+      <h3 class="h3-responsive">100% Organic - Rain washed, Sun Dried & Fire Roasted</h3>
+    
+    </div>
+  </mdb-carousel-item>
+  
+</mdb-carousel>
+<!-- News jumbotron -->
+<div class="jumbotron text-center hoverable">
 
+  <!-- Grid row -->
+  <div class="row">
 
-<!--Whole Bean Part-->
+    <!-- Grid column -->
+    <div class="col-md-6 offset-md-1 mx-3 my-3">
 
-<div class = "row">
-  <div class = "col-md-5">
+      <!-- Featured image -->
+      <div class="view overlay waves-light" mdbWavesEffect>
+        <img src="https://coffee-channel.com/wp-content/uploads/2019/09/aroma-art-beverage-1251175.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-5 text-md-left ml-5 mt-5">
+
+      <!-- Excerpt -->
+     
+
+      <div class = "mb-4">
+      </div>
+
+      <h3>Good from the ground up!</h3><br><br>
+      <p>Small craft artisan roasters community driven always fresh. 
+        <br>Freshly ground for the daily grind.
+      </p>
       
-<div class = "caption">BOLD, BEAUTIFUL,
-  <br>BRING-IT-ON BEANS
-  <br>   
-  <button type="button" class="beanbtn" routerLink = "/wholebean">GET BEANS ></button>      
-</div>
-</div>
-  <div class = "col-md-7">
-      
-<img class ="d-block w-100" style = "height: 500px" src = "https://images.assetsdelivery.com/compings_v2/amenic181/amenic1811607/amenic181160700039.jpg">
-</div>
+<br><br>
+<button type="button" class="btn btn-elegant" id= "groundbtn" routerLink = "/groundcoffee" mdbWavesEffect>GET GROUNDED</button>
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
 
 </div>
+
+
+
+<!-- News jumbotron -->
+<div class="jumbotron text-center hoverable">
+
+  <!-- Grid row -->
+  <div class="row">
+    <div class="col-md-5 text-md-left ml-5 mt-5">
+
+      <!-- Excerpt -->
+     
+
+      <div class = "mb-6">
+      </div>
+
+      <h3>Bold, beautiful, bring-it on beans</h3><br><br>
+      <p> From deep, dark & delicious to lively and bright; all our beans are 100% certified Organic, Fairtrade, shade-grown Arabica, Canadian Rocky Mountain-roasted coffee.</p>
+      
+<br><br>
+      <button type="button" class="btn btn-elegant" id= "beanbtn" routerLink = "/wholebean">GET BEANS</button>
+
+    </div>
+    <!-- Grid column -->
+     <!-- Grid column -->
+     <div class="col-md-6 offset-md-1 mx-3 my-3">
+
+      <!-- Featured image -->
+      <div class="view overlay waves-light" mdbWavesEffect>
+        <img src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_800/https://housewifehowtos.com/wp-content/uploads/2013/03/How-to-Clean-a-Coffee-Maker-Coffee-maker-with-coffee-beans-in-a-bag-and-a-cup-.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Grid row -->
+
+  <hr>
+</div>
+
+   
+       
+
+
+
+   
+
+

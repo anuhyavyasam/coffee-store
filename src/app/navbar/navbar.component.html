@@ -1,87 +1,79 @@
-<!-- <app-ground-coffee-menu></app-ground-coffee-menu> -->
 
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black">
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="/"><img src="assets/images/logo.JPG" id ="logo"></a></mdb-navbar-brand>
 
-<mdb-navbar class="navbar navbar-expand-lg navbar-dark black">
+  <links>
 
-    <!-- Navbar brand -->
-  
-    <!-- Collapsible content -->
-    <links>
-  
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown" dropdown>
-            <a dropdownToggle mdbWavesEffect type="button" class="nav-link waves-light" mdbWavesEffect>
-            COFFEE</a>
-            <div *dropdownMenu class="dropdown-menu" role="menu">
-                <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/groundcoffee">GROUND COFFEE</a>
-    
-                <a class="dropdown-item waves-light" mdbWavesEffect routerLink = "/wholebean">WHOLE BEAN</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown" dropdown>
-          <a dropdownToggle mdbWavesEffect type="button" class="nav-link waves-light" mdbWavesEffect>
-          COMPANY</a>
-          <div *dropdownMenu class="dropdown-menu" role="menu">
-              <a class="dropdown-item waves-light" mdbWavesEffect routerLink = "/story">OUR STORY</a>
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+         <!-- Dropdown -->
+         <li class="nav-item dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          COFFEE <span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/groundcoffee">GROUND COFFEE</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/wholebean">WHOLE BEAN</a>
           </div>
       </li>
-      <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link waves-light" mdbWavesEffect>
-        CONNECT</a>
-        <div *dropdownMenu class="dropdown-menu" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect>CONNECT US ON</a>
-<a href = "https://www.facebook.com/" target = "blank" type="button"  size="sm" color="fb"><mdb-icon fab icon="facebook-f"></mdb-icon></a>
-<a href = "https://www.instagram.com/" target = "blank" type="button" mdbBtn floating="true" size="sm" color="ins"><mdb-icon fab icon="instagram"></mdb-icon></a>
-<a href = "https://www.twitter.com/" target = "blank" type="button" mdbBtn floating="true" size="sm" color="tw"><mdb-icon fab icon="twitter"></mdb-icon></a>
-
-            <!-- <a href="www.facebook.com" class = "facebook" target = "blank"><mdb-icon fab icon="facebook"> </mdb-icon></a>   -->
+       <!-- Dropdown -->
+       <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+        ABOUT US<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect routerLink = "/story">OUR STORY</a>
+            
         </div>
     </li>
-    <!-- <mdb-icon fab icon="twitter"></mdb-icon><mdb-icon fab fab icon="instagram"></mdb-icon></a> -->
-    <!-- <a class="dropdown-item waves-light" mdbWavesEffect href="#">CONNECT US ON <br> -->
-    <li class = "navbar-brand">
-      <a class = "nav-item" routerLink="/"><img src="assets/images/logo.JPG" id ="logo"></a>
-  </li>
-  
-    <li class="nav-item dropdown" dropdown>
-      <a dropdownToggle mdbWavesEffect type="button" class="nav-link waves-light" mdbWavesEffect>
-      LOCATIONS</a>
-      <div *dropdownMenu class="dropdown-menu" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect routerLink = "/storelocator">STORE LOCATOR</a>
+     <!-- Dropdown -->
+     <li class="nav-item dropdown" dropdown>
+      <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+      CONNECT<span class="caret"></span></a>
+      <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">CONNECT US ON</a>
+          <a href = "https://www.facebook.com/" target = "blank" type="button"  size="sm" color="fb"><mdb-icon fab icon="facebook-f"></mdb-icon></a>
+          <a href = "https://www.instagram.com/" target = "blank" type="button" mdbBtn floating="true" size="sm" color="ins"><mdb-icon fab icon="instagram"></mdb-icon></a>
+          <a href = "https://www.twitter.com/" target = "blank" type="button" mdbBtn floating="true" size="sm" color="tw"><mdb-icon fab icon="twitter"></mdb-icon></a>
       </div>
   </li>
+      
   
- 
-  <li class="nav-item dropdown" dropdown>
+  <!-- Navbar brand -->
+  
+  
+
+    <!-- Links -->
+    
+   <!-- Dropdown -->
+   <li class="nav-item dropdown" dropdown>
     <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-    LANGUAGE</a>
-    <div *dropdownMenu class="dropdown-menu" role="menu">
-        <a class="dropdown-item waves-light" mdbWavesEffect href="#">ENGLISH</a>
-        <a class="dropdown-item waves-light" mdbWavesEffect href="#">ESPANOL</a>
+    LOCATIONS<span class="caret"></span></a>
+    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+        <a class="dropdown-item waves-light" mdbWavesEffect routerLink = "/storelocator">STORE LOCATOR</a>
+        
     </div>
-  </li>
-  <li class="nav-item dropdown" dropdown>
-    <a dropdownToggle mdbWavesEffect type="button" routerLink = "/login" class="nav-link waves-light" mdbWavesEffect>
-     LOGIN </a>
-    <!-- <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-      <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/myorders">MY ORDERS</a>
-      <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/admin/orders">MANAGE ORDERS</a>
-      <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/admin/products">MANAGE PRODUCTS</a>
-      <a class="dropdown-item waves-light" mdbWavesEffect routerLink="">LOG OUT</a>
-      <div class="divider dropdown-divider"></div> -->
-  
-    <!-- </div> -->
-  </li>
- 
-  
-        </ul>
-        <!-- Links -->
-  
-    </links>
-    <!-- Collapsible content -->
-  
-  </mdb-navbar>
-  <!--/.Navbar-->
-  <!--  -->
-<!-- <app-home></app-home>  -->
+</li>
+ <!-- Dropdown -->
+ <li class="nav-item dropdown" dropdown>
+  <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+  LANGUAGE<span class="caret"></span></a>
+  <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+      <a class="dropdown-item waves-light" mdbWavesEffect href="#">ENGLISH</a>
+      <a class="dropdown-item waves-light" mdbWavesEffect href="#">SPANISH</a>
+      
+  </div>
+</li>
+ <!-- Dropdown -->
+ <li class="nav-item dropdown" dropdown>
+  <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+  LOGIN<span class="caret"></span></a>
+  <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+      <a class="dropdown-item waves-light" mdbWavesEffect routerLink = "/login">LOGIN</a>
+     
+  </div>
+</li>       
+
+      </ul>
+  </links>
+
+</mdb-navbar>

@@ -1,18 +1,19 @@
 button{
-    margin-top: 20px;
+    /* margin-top: 20px;
     
     margin-left: 80px;
     height: 50px;
     width: 200px;
     color: white;
-    background-color: black;
+    background-color: black; */
    /* border: 10px; */
-   border-radius: 5px
+   border-radius: 5px;
+   
     
 }
 button:hover{
-    color: rgb(39, 36, 36);
-    background-color: white;
+    color: gray;
+        background-color:rgb(39, 36, 36);
 }
 
 .ng-invalid.ng-touched {

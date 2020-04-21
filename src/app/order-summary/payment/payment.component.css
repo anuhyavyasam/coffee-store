@@ -1,14 +1,11 @@
 button{
-    width: 200px;
-    margin-left: 80px;
-    background-color: black;
-    color: white;
-    border-radius: 5px
+    border-radius: 5px;
+    
 
 }
 button:hover{
-    color: black;
-    background-color:rgb(100, 96, 96);
+    color: gray;
+        background-color:rgb(39, 36, 36);
 }
 form{
     margin-bottom: 100px;

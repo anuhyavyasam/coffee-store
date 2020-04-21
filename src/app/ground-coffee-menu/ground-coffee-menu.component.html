@@ -1,3 +1,4 @@
+<div class="container-fluid">
  <div class="row">
   <div class="col-md-7">
     <br>
@@ -5,23 +6,18 @@
     <p style="font-size: 20px; margin-left: 10px; color:white; text-align: center;">Good from the ground up!</p><br>
     <p style="font-size: 20px; margin-left: 10px; color:white; text-align: left;">Our ground coffee is 100% certified
       Organic, Fairtrade, shade-grown Arabica, Canadian Rocky Mountain-roasted coffee.
-      <br> (Think that's a mouthful? Wait until you've tried the first sip!)
-      <br><br> Freshly ground, meticulously packaged and one step closer to the cup!</p>
+      Freshly ground, meticulously packaged and one step closer to the cup!<br><br> (Think that's a mouthful? Wait until you've tried the first sip!) </p>
   </div>
-  <div class="col-md-5">
-    <!-- <div class="view overlay"> -->
-      <img src="../../assets/images/ground-coffee-menu image.jpg" class="img-fluid"
+ 
+ <div class="col-md-5">
+      <img src="../../assets/images/ground-coffee-menu image.jpg" class = "img img-fluid max-width: 100%;"
         alt="Sample image with waves effect.">
-      <a>
-        <div class=" mdbWavesEffect"></div>
-      </a>
-    <!-- </div> -->
-  </div>
+      <a> 
+        <div class= "mdbWavesEffect"></div> 
+       </a>
+  </div> 
+  
 </div>
-<div class="row">
-  <br><br><br><br>
-</div>
-
 <div class="row">
 
   <div class="col-md-3" *ngFor="let product of productList">
@@ -37,12 +33,9 @@
 <div class="row">
   <div class="col-md-12">
 
-    <!-- <img src="../../assets/images/paper bag.png"
-      style="width: 60px; border-radius:60%;margin-right:30% ; height: 50px; position: absolute; right: 0;"> -->
+<app-cart-notification></app-cart-notification>
 
-     <app-cart-notification></app-cart-notification>
-
-    <button type="button" routerLink = "/checkout">Proceed to checkout
+    <button class="btn btn-light" routerLink = "/checkout">Proceed to checkout
     </button>
 
   </div>
@@ -50,4 +43,5 @@
 <div class="row">
   <br><br><br><br>
 
+</div>
 </div>

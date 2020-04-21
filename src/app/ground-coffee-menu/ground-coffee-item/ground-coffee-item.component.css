@@ -1,11 +1,11 @@
 
-.card-img-top{
+/* .card-img-top{
 height: 250px
-} 
+}  */
 
 .body{
-    width: 280px;
-    margin-left: 5px;
+    /* width: 100%; */
+    /* margin-left: 5px; */
     background-color: rgb(48, 46, 46);
 }
 .card-body{
@@ -13,20 +13,17 @@ height: 250px
 }
 
 .btn{
-color: black;
-background-color:white;
-
-
+/* color: black;
+background-color:white; */
 border-radius: 5px;
 margin-left: 50px;
 
-height: 35px;
-
-font-size: 14px
 }
+
+
 .btn:hover{
     
-        color: white;
+        color: gray;
         background-color:rgb(39, 36, 36);
     
 }

@@ -64,9 +64,9 @@
                 aria-describedby="inputGroupPrepend21" ngModel name="stAddress" required
                 #stAddress = "ngModel"
                 [ngModel]="defaultStreet">
+              </div>
                 <span class="help-block" *ngIf="!stAddress.valid && stAddress.touched">Please enter street address</span>
             </div>
-          </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-4">
@@ -150,11 +150,13 @@
             <span class="help-block" *ngIf="!zip.valid && zip.touched">Please enter zipcode</span>
           </div>
         </div>
+        <hr>
         <div class="row">
           <div class="col-md-6 mb-4">
-            <button class="btn" 
+            <button class="btn btn-elegant" 
             type="submit"
-            [disabled]="!f.valid">Save Address</button>
+            [disabled]="!f.valid">
+            Save Address</button>
           </div>
         </div>
       </form>

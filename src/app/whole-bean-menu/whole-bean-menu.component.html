@@ -1,3 +1,4 @@
+<div class = "container-fluid">
 <div class="row">
     <div class="col-md-7">
       <!-- <br> -->
@@ -5,20 +6,19 @@
       <p style="font-size: 20px; margin-left: 10px; color:white; text-align: center;">Bold, beautiful, bring-it-on beans.</p><br>
       <p style="font-size: 20px; margin-left: 10px; color:white; text-align: left;">These are hands-down, some of the finest beans in a bag you'll find. From deep, dark & delicious to lively and bright; all our beans are 100% certified Organic, Fairtrade, shade-grown Arabica, Canadian Rocky Mountain-roasted coffee. 
     </div>
-    <!-- https://us.123rf.com/450wm/ansphotos/ansphotos2001/ansphotos200101760/136849178-roasted-coffee-beans-with-scoop-and-burlap-sack-.jpg?ver=6 -->
+   
     <div class="col-md-5">
       <!-- <div class="view overlay"> -->
-        <img src="https://image.stern.de/7123958/16x9-940-529/7ab45a62bbccdef83ae63fabc19bf2b2/og/kaffee-mischung.jpg" class="img"
+        <img src="../../assets/images/wholebean.jpg" class="img img-fluid max-width: 100%;"
           alt="Sample image with waves effect.">
         <a>
           <div class=" mdbWavesEffect"></div>
         </a>
       <!-- </div> -->
     </div>
+  
   </div>
-  <div class="row">
-    <br><br><br><br>
-  </div>
+  
   
   <div class="row">
   
@@ -35,12 +35,8 @@
   <div class="row">
     <div class="col-md-12">
   
-      <!-- <img src="../../assets/images/paper bag.png"
-        style="width: 60px; border-radius:60%;margin-right:30% ; height: 50px; position: absolute; right: 0;"> -->
-  
-       
-  
-      <button type="button" routerLink = "/checkout">Proceed to checkout
+      <app-cart-notification></app-cart-notification>
+      <button class="btn btn-light" routerLink = "/checkout">Proceed to checkout
       </button>
   
     </div>
@@ -49,3 +45,4 @@
     <br><br><br><br>
   
   </div>
+</div>
