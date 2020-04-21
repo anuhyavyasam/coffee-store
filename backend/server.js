@@ -30,7 +30,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
    extended: false
 }));
-app.use(cors()); 
+app.use(cors());
+
+// Create link to angular build directory
+const distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
