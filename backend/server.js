@@ -33,11 +33,12 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 // Create link to angular build directory
+console.log('directory path', __dirname);
 const distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+app.use('/', express.static(distDir));
 
-app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
-app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
+// app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
+// app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 
 app.use('/api/v1', productRoute);
 app.use('/api/v1', orderRoute);
