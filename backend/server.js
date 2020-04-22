@@ -43,11 +43,9 @@ app.use(express.static(distDir));
 app.use('/api/v1', productRoute);
 app.use('/api/v1', orderRoute);
 
-// Create port
-const port = process.env.PORT || 4000;
-console.log(process.env);
 
-app.listen(port, () => {
+const server = app.listen(process.env.PORT || 8080, () => {
+   const port = server.address().port;
   console.log('Connected to port ' + port);
   console.log('app locals', app.locals);
 });
