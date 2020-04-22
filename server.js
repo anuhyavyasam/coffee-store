@@ -34,14 +34,10 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 // Create link to angular build directory
-console.log('directory path', __dirname);
 const distDir = __dirname + "/dist/";
-// const distDir = "../dist/";
 app.use(express.static(distDir));
 app.use('/', express.static(distDir));
 
-// app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
-// app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 
 app.use('/api/v1', productRoute);
 app.use('/api/v1', orderRoute);
@@ -53,10 +49,6 @@ const server = app.listen(process.env.PORT || 8080, () => {
   console.log('app locals', app.locals);
 });
 
-// Find 404 and hand over to error handler
-// app.use((req, res, next) => {
-//     next(createError(404));
-//  });
  
  // error handler
  app.use(function (err, req, res, next) {
