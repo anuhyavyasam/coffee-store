@@ -10,10 +10,12 @@ import { Order } from '../models/order';
 
 export class ApiService {
 
-    apiServer = 'http://localhost';
-    serverPort = 4000;
+    // apiServer = 'http://localhost';
+    // serverPort = 4000;
 
-    baseUri: string = `${this.apiServer}:${this.serverPort}/api/v1`;
+    // baseUri: string = `${this.apiServer}:${this.serverPort}/api/v1`;
+    
+    baseUri: string =  'api/v1';
     headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     constructor(private http: HttpClient) { }
