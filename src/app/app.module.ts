@@ -64,9 +64,8 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     HttpClientModule,
     StorageServiceModule,
-    NgxPageScrollCoreModule
   ],
-  providers: [ApiService, ProductService, MessengerService, ScrollTopService],
+  providers: [ApiService, ProductService, MessengerService],
   bootstrap: [AppComponent]
   
 })
