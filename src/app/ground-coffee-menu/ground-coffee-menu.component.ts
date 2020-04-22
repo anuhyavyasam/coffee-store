@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 import { ApiService } from './../service/api.service';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/models/product'
@@ -33,10 +33,9 @@ constructor( private apiService: ApiService,
         console.log('Data fetched!', data);
         this.productList = data;
       }
+      
     );
   }
-  onProceedToCheckout(){
-    this.router.navigate(['/checkout']);
-}
+  
 }
 

@@ -10,7 +10,7 @@ export class CheckoutComponent implements OnInit {
 
   constructor(private router : Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
   onLoadSummary(){
     this.router.navigate(['/ordersummary']);

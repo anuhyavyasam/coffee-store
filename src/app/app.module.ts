@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { GroundCoffeeMenuComponent } from './ground-coffee-menu/ground-coffee-menu.component';
-import { Routes, RouterModule } from '@angular/router';
 import { StoryComponent } from './story/story.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrdersuccessComponent } from './ordersuccess/ordersuccess.component';
@@ -28,23 +26,11 @@ import { MapComponent } from './map/map.component';
 import {StorageServiceModule} from 'angular-webstorage-service';
 import { CartNotificationComponent } from './cart-notification/cart-notification.component';
 import {AlertModule} from './_alert';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
-const appRoutes : Routes = [
-  {path : '' , component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-   {path : 'groundcoffee' , component: GroundCoffeeMenuComponent,
-   children: [{path: 'groundcoffeeitem', component:GroundCoffeeItemComponent}]},
-   {path : 'wholebean' , component: WholeBeanMenuComponent,
-   children: [{path: 'wholebeanitem', component:WholeBeanItemComponent}]},
-   {path: 'story', component : StoryComponent},
-   {path: 'checkout', component: CheckoutComponent},
-   {path: 'revieworder', component: CartComponent},
-   {path: 'billing' , component: BillingAddressComponent},
-   {path: 'ordersuccess', component: OrdersuccessComponent},
-   {path: 'storelocator', component: MapComponent}
-]
+
 
 
 @NgModule({
@@ -73,13 +59,14 @@ const appRoutes : Routes = [
   imports: [
     AlertModule,
     BrowserModule,
-    AppRoutingModule, MDBBootstrapModule.forRoot(),
+    AppRoutingModule, 
+    MDBBootstrapModule.forRoot(),
     FormsModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    StorageServiceModule
+    StorageServiceModule,
+    NgxPageScrollCoreModule
   ],
-  providers: [ApiService, ProductService, MessengerService],
+  providers: [ApiService, ProductService, MessengerService, ScrollTopService],
   bootstrap: [AppComponent]
   
 })
