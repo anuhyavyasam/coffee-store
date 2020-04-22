@@ -5,10 +5,10 @@ const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const dbConfig = require('./database/db');
+const dbConfig = require('./backend/database/db')
 
-const productRoute = require('./routes/product-rte');
-const orderRoute = require('./routes/order-rte');
+const productRoute = require('./backend/routes/product-rte');
+const orderRoute = require('./backend/routes/order-rte');
 
 // Connecting with mongo db
 mongoose.Promise = global.Promise;
@@ -16,6 +16,7 @@ const db  = process.env.MONGODB_URL || dbConfig.db;
 mongoose.connect(db, {
    useNewUrlParser: true
 }).then(() => {
+   console.log('directory path', __dirname);
       console.log(`Database is sucessfully connected at ${db}`);
    },
    error => {
@@ -35,7 +36,9 @@ app.use(cors());
 // Create link to angular build directory
 console.log('directory path', __dirname);
 const distDir = __dirname + "/dist/";
+// const distDir = "../dist/";
 app.use(express.static(distDir));
+app.use('/', express.static(distDir));
 
 // app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 // app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
