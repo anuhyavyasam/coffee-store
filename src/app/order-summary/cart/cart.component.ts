@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessengerService } from 'src/app/service/messenger.service';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/service/product.service';
+import {AlertService} from 'src/app/_alert';
 
 
 @Component({
@@ -13,7 +14,13 @@ export class CartComponent implements OnInit {
   cartItems = [];
   cartTotal = 0;
 
-  constructor(private msg : MessengerService, productService: ProductService) { 
+  options = {
+    autoClose: false,
+    keepAfterRouteChange: false
+  };
+
+  constructor(private msg : MessengerService, private productService: ProductService,
+    private alertService: AlertService) { 
     const checkedOutProducts = productService.getCheckedOutProducts();
     checkedOutProducts.forEach(p => {
       this.cartTotal+= p.quantity * p.price;
@@ -33,7 +40,12 @@ export class CartComponent implements OnInit {
   onQuantityDecremented(selected) {
     for(let cartItem of this.cartItems ) {
       if(selected.productId === cartItem.productId) {
+        if((cartItem.qty - 1) < 0) {
+          this.alertService.error('Quantity cannot be negative', this.options);
+          break;
+        }
         cartItem.qty--;
+        this.cartTotal-= selected.price;
         break;
       }
     }
@@ -43,6 +55,7 @@ export class CartComponent implements OnInit {
     for(let cartItem of this.cartItems ) {
       if(selected.productId === cartItem.productId) {
         cartItem.qty++;
+        this.cartTotal+= Number(selected.price);
         break;
       }
     }

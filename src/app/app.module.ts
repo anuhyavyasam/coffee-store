@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { MapComponent } from './map/map.component';
 import {StorageServiceModule} from 'angular-webstorage-service';
 import { CartNotificationComponent } from './cart-notification/cart-notification.component';
+import {AlertModule} from './_alert';
 
 
 
@@ -70,6 +71,7 @@ const appRoutes : Routes = [
   ],
 
   imports: [
+    AlertModule,
     BrowserModule,
     AppRoutingModule, MDBBootstrapModule.forRoot(),
     FormsModule,
