@@ -1,3 +1,8 @@
 .fas{
     letter-spacing: 0.5rem;
 }
+
+ button{
+background-color: rgb(39, 36, 36);
+color: rgba(0, 0, 0, 0.479);
+ }
