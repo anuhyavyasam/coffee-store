@@ -18,7 +18,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent {
+
+
 
 //   map;
 //   ellicottcity;
