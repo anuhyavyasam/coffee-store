@@ -1,6 +1,12 @@
 {
   "name": "coffee-store",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Anuhya Vyasam",
+    "url": "https://anuhyavyasam.github.io/myportfolio/"
+  },
+  "license": "MIT",
+  "keywords": ["angular", "node", "express", "mongodb", "mean"],
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
