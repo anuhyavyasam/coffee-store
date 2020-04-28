@@ -3,9 +3,9 @@
 
 <div class = "row">
     <div class = "col-md-2">
-<img [src] = "cartItem.productImage"> </div>
+<img [src] = "cartItem.imageUrl"> </div>
 <div class = "col-md-4">
-{{cartItem.productName}}</div>
+{{cartItem.name}}</div>
 <div class = "col-md-3">
 <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
     <button mdbBtn type="button" color = "black" size="xs" 
@@ -13,7 +13,7 @@
     mdbWavesEffect
     (click)="onQuantityDecrement()">
     <strong>-</strong></button>
-    <h5><strong>{{cartItem.qty}}</strong></h5>
+    <h5><strong>{{cartItem.quantity}}</strong></h5>
     <button mdbBtn type="button" color = "black" size="xs" 
     class="waves-light" id="secondbtn" 
     mdbWavesEffect
@@ -22,7 +22,7 @@
 </div>
 <div class = "col-md-3">
     <!-- {{cartItem.qty}} -->
-    <strong>{{(cartItem.qty*cartItem.price) | currency : 'USD'}}</strong>
+    <strong>{{(cartItem.quantity*cartItem.price) | currency : 'USD'}}</strong>
  </div>
 
 

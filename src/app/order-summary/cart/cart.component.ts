@@ -25,10 +25,10 @@ export class CartComponent implements OnInit {
     checkedOutProducts.forEach(p => {
       this.cartTotal+= p.quantity * p.price;
       this.cartItems.push({
-        productId : p._id,
-        productImage : p.imageUrl,
-        productName : p.name,
-        qty : p.quantity,
+        _id : p._id,
+        imageUrl : p.imageUrl,
+        name : p.name,
+        quantity : p.quantity,
         price : p.price 
       });
     });
@@ -39,12 +39,13 @@ export class CartComponent implements OnInit {
 
   onQuantityDecremented(selected) {
     for(let cartItem of this.cartItems ) {
-      if(selected.productId === cartItem.productId) {
-        if((cartItem.qty - 1) < 0) {
+      if(selected._id === cartItem._id) {
+        if((cartItem.quantity - 1) < 0) {
           this.alertService.error('Quantity cannot be negative', this.options);
           break;
         }
-        cartItem.qty--;
+        this.productService.checkedOutProducts(selected, true);
+        cartItem.quantity--;
         this.cartTotal-= selected.price;
         break;
       }
@@ -52,9 +53,10 @@ export class CartComponent implements OnInit {
   }
 
   onQuantityIncremented(selected) {
+    this.productService.checkedOutProducts(selected);
     for(let cartItem of this.cartItems ) {
-      if(selected.productId === cartItem.productId) {
-        cartItem.qty++;
+      if(selected._id === cartItem._id) {
+        cartItem.quantity++;
         this.cartTotal+= Number(selected.price);
         break;
       }

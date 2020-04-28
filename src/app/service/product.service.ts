@@ -28,7 +28,7 @@ export class ProductService {
 
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService) { }
 
-  checkedOutProducts(selected: Product) {
+  checkedOutProducts(selected: Product, isDecrement = false) {
     let isNewSelection = true;
 
     // set the data into session storage
@@ -38,7 +38,11 @@ export class ProductService {
       for (const product of existingCartItems) {
         // if existing item, just update the quantity
         if (product._id === selected._id) {
-          product.quantity++;
+          if(isDecrement) {
+            product.quantity--;
+          } else {
+            product.quantity++;
+          }
           isNewSelection = false;
           break;
         }
@@ -50,6 +54,7 @@ export class ProductService {
         existingCartItems.push(selected);
       }
     } else {
+      // first item
       selected.quantity = 1;
       existingCartItems.push(selected);
     }
